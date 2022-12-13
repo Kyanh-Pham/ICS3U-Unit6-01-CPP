@@ -12,7 +12,6 @@ int main() {
     int randomNumbers[10];
     int singleRandomNumber;
     float average = 0;
-    int sumOfRandomNumbers;
 
     // input
     for (int loop_counter = 0; loop_counter < 10; loop_counter++) {
