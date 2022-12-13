@@ -6,7 +6,6 @@
 
 #include <iostream>
 #include <random>
-#include <numeric>
 
 int main() {
     int randomNumbers[10];
