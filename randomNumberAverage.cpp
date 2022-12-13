@@ -26,8 +26,6 @@ int main() {
          << randomNumbers[loop_counter] << "" << std::endl;
     }
     // adds all the numbers in the array
-    sumOfRandomNumbers =
-     std::accumulate(randomNumbers, randomNumbers + 10, sumOfRandomNumbers);
     average = average /(sizeof(randomNumbers) / sizeof(randomNumbers[0]));
     std::cout << "" << std::endl;
     std::cout << "The average is " << average << "" << std::endl;
