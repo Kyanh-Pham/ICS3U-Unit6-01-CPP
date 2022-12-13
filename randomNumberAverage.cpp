@@ -6,25 +6,30 @@
 
 #include <iostream>
 #include <random>
+#include <numeric>
 
-main() {
+int main() {
 
     int randomNumbers[10];
     int singleRandomNumber;
-    int average;
+    float average = 0;
+    int sumOfRandomNumbers;
 
     // input
     for (int loop_counter = 0; loop_counter < 10; loop_counter++) {
         std::random_device rseed;
         std::mt19937 rgen(rseed());
-        std::uniform_int_distribution<int> idist(0, 10);
+        std::uniform_int_distribution<int> idist(0, 100);
         singleRandomNumber = idist(rgen);
         randomNumbers[loop_counter] = singleRandomNumber;
+        average = average + singleRandomNumber;
+        std::cout << "The random number is: " << randomNumbers[loop_counter] << "" << std::endl;
     }
-
-    for (int loop_counter; loop_counter < 10; loop_counter++) {
-        std::cout << "The random number is:" << randomNumbers[loop_counter] << "" std::endl;
-    }
-    average = std::accumulate(randomNumbers)
+    // adds all the numbers in the array
+    sumOfRandomNumbers = std::accumulate(randomNumbers, randomNumbers + 10, sumOfRandomNumbers);
+    average = average /(sizeof(randomNumbers) / sizeof(randomNumbers[0]));
     std::cout << "" << std::endl;
+    std::cout << "The average is " << average << "" << std::endl;
+
+    std::cout << "\n.Done" << std::endl;
 }
