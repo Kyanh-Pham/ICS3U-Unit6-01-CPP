@@ -9,7 +9,6 @@
 #include <numeric>
 
 int main() {
-
     int randomNumbers[10];
     int singleRandomNumber;
     float average = 0;
@@ -23,10 +22,12 @@ int main() {
         singleRandomNumber = idist(rgen);
         randomNumbers[loop_counter] = singleRandomNumber;
         average = average + singleRandomNumber;
-        std::cout << "The random number is: " << randomNumbers[loop_counter] << "" << std::endl;
+        std::cout << "The random number is: "
+         << randomNumbers[loop_counter] << "" << std::endl;
     }
     // adds all the numbers in the array
-    sumOfRandomNumbers = std::accumulate(randomNumbers, randomNumbers + 10, sumOfRandomNumbers);
+    sumOfRandomNumbers =
+     std::accumulate(randomNumbers, randomNumbers + 10, sumOfRandomNumbers);
     average = average /(sizeof(randomNumbers) / sizeof(randomNumbers[0]));
     std::cout << "" << std::endl;
     std::cout << "The average is " << average << "" << std::endl;
